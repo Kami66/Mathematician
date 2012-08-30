@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+
+\def\proof{{\it Proof.\ }}
+\def\pf{{\hfill$\Box$}}
+
+\newtheorem{thm}{Problem}
+
+\usepackage{amssymb,graphicx}
+
+\begin{document}
+
+\noindent
+{\bf\large Kim, Yie \& Yoo}
+
+\noindent
+{\bf MAT 512 Prof. Hurlbert}
+
+\noindent
+{\it Daily HW 8/29/09}
+\vspace{0.5 in}
+
+\begin{itemize}
+
+\item[5]
+\begin{thm}
+Use three of the IMPORTANT IDENTITIES to prove that
+$\displaystyle\sum\limits_{k=0}^{38204629939869} \frac {{{38204629939869}\choose{k}}}{{{76409259879737}\choose{k}}} = 2$
+
+\end{thm}
+
+\proof
+Since numbers are too large, we try to generalize it. Both
+two numbers are odd numbers with a relation 76409259879737 = 2 $\times$ 38204629939869 -1.
+So the generalized version of this problem is to prove that $\displaystyle\sum\limits_{k=0}^{2m+1} \frac{{{2m+1} \choose {k}}}{{{4m+1 } \choose {k}}}= 2. $ \\	 
+To prove generalied version of this problem, we use this identity\\
+
+$\displaystyle\sum\limits_{i=0}^{k}{{n+i}\choose{i}} = {{n+k+i}\choose{k}} \cdot\cdot\cdot (*)$\\
+              
+Let's start\\\\
+$\displaystyle\sum\limits_{k=0}^{2m+1} \frac{{{2m+1} \choose {k}}}{{{4m+1 } \choose {k}}}=  
+1 + \sum\limits_{k=1}^{2m+1} \frac{{{2m+1} \choose {k}}}{{{4m+1 } \choose {k}}} \\
+= 1 + \sum\limits_{k=1}^{2m+1} \frac{(4m+1-k)!(2m+1)!}{(2m+1-k)!(4m+1)!} \\
+= 1 + \frac{(2m+1)!}{(4m+1)!}\sum\limits_{k=1}^{2m+1} \frac{(4m+1-k)!}{(2m+1-k)!} \\
+= 1 + \frac{(2m+1)!}{(4m+1)!}\sum\limits_{k=1}^{2m+1} \frac{(4m+1-k)!(2m)!}{(2m+1-k)!(2m)!} \\
+= 1 + \frac{(2m+1)!}{(4m+1)!}\sum\limits_{k=1}^{2m+1}{{4m+1-k}\choose{2m}} (2m)!\\
+= 1 + \frac{(2m+1)!(2m)!}{(4m+1)!}\sum\limits_{k=1}^{2m+1}{{4m+1-k}\choose{2m}} \\
+= 1 + \frac{1}{{{4m+1}\choose{2m}}}\sum\limits_{k=1}^{2m+1}{{4m+1-k}\choose{2m}} \\
+= 1 + \frac{1}{{{4m+1}\choose{2m}}}\sum\limits_{i=0}^{2m}{{2m+i}\choose{i}} (by\ inverse\ order)\\
+= 1 + \frac{1}{{{4m+1}\choose{2m}}}{{{4m+1}\choose{2m}}} (\because (*))\\
+= 2
+$	 
+
+\pf
+
+\end{itemize}
+
+\end{document}
