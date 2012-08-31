@@ -1,0 +1,120 @@
+%================================= 
+% 
+%                   this is LaTeX-2e source 
+% 
+%================================= 
+%================================= 
+%       please do not change this formatting 
+%================================= 
+\documentclass[10pt]{article}
+\parindent=0pt \parskip=8pt    
+\textwidth=5in 
+\hoffset=.3in 
+\usepackage{amssymb,amsmath,amsthm,mathrsfs}
+\pagestyle{headings}
+\title{Math 543:  Homework Set 1}
+%================================= 
+%   replace 'your name here' with your name! 
+%================================= 
+\author{Jangwon Yie \\ Arizona State University}
+\date{\today}
+\begin{document}
+\maketitle 
+\fbox{\parbox{\textwidth}{\vskip.2em 
+1. Let $G=\{e,a,b,c\}$ be a group of order 4, where $e$ is the identity of $G$.  Deduce  
+multiplication tables for all the possible isomorphism classes of $G$.  Argue from the 
+deﬁnitions that you have found them all. 
+\vskip.2em }}
+\vskip1em
+{\it Solution.}
+In the first, Say an element which is not $e$ $a$.
+Then there are two cases which value $a^2$ could have.
+One thing is that $a^2 = e$.
+The other thing is that $a^2 \neq e$.
+
+Now, consider first case.
+$G = \{e,a\}, a^2 = e$ already satisfies group condition.
+However, to satisfy 4 elements condition of $G$, we need another distinct element $b$.
+Since $a \neq e and b \neq e$, $ab \neq a, ab \neq b \rightarrow ab = c$.
+So $G = \{e,a,b,c\}, a^2 = e, ab = c$.
+To satisfy 4 element condition, $b^{-1}=b^2=c^{-1}=c^2=e$ and $bc = a$.
+Finally, we know that $G = \{e,a,b,c | a^2 = b^2 = c^2 = e, ab = c, bc = a, ac = a(ab) = b\}$
+
+Consider second case.
+Since $a^2 \neq a (\because a^2 = a \rightarrow a = e), a^2$ should be some other distinct element.
+Say this distinct element b. Hence $a^2 = b$
+Then $G$ have $e,a,b(a^2 = b, a^2 \neq a)$. Now consider $a^{-1}$. 
+Since $a^2 \neq e$, $a^{-1} \neq a$, so $a^{-1} = a^2$ or other distinct element $c$.
+If $a^{-1} = a^2$ then $a^3 = e$. It means $G=\{e,a,a^2\}$. But a condition $|G| = 4$ makes insert another element $c$ into $G$. But in this case, $ac$ could not be $e, a, a^2$. It means  $|G| > 4$.
+Hence, $a^{-1} = c$. Moreover, since $|G|$ = 4, $a * a^2 = a^3 =c (\because a^3 \neq e, a^3 \neq a, a^3 \neq a^2).$ Finally $G = \{e,a,b,c\} = \{e,a,a^2,a^3\} \rightarrow cyclic group$
+ 
+%   insert your solution to problem 1 below this line 
+%   here is an empty multiplication table....
+\begin{center}{\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|cccc}$*$&$e$&$a$&$b$&$c$\\ 
+\hline 
+$e$&e&a&b&c \\ 
+$a$&a&e&c&b \\ 
+$b$&b&c&e&a \\ 
+$c$&c&b&a&e \\ 
+\end{tabular}}
+\end{center}
+
+\begin{center}{\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|cccc}$*$&$e$&$a$&$b$&$c$\\ 
+\hline 
+$e$&e&a&b&c \\ 
+$a$&a&b&c&e\\ 
+$b$&b&c&e&a\\ 
+$c$&c&e&a&b\\ 
+\end{tabular}}
+\end{center}
+
+\newpage 
+\fbox{\parbox{\textwidth}{\vskip.2em 
+2. Let $H < G$ and define $C_G(H) = \{g \in G: gh = hg \quad\forall h \in H\}$. 
+\begin{enumerate}
+\item[a.] Show that $C_G(H)$ is a subgroup of $G$. 
+\item[b.] Let $G = \mathcal D_4, H = \langle F \rangle$.  Find $C_G(H)$. 
+\end{enumerate}
+}}
+\vskip1em
+{\it Solution.}
+\begin{enumerate}
+\item[a.]
+To prove $C_G(H)$ is a subgroup of $G$, we only need to show that $ab^{-1} \in C_G(H)$ when $a \in C_G(H) , b \in C_G(H)$. \\
+$ \quad\forall h, ab^{-1}h = ahb^{-1} (\because b \in C_G(H) \rightarrow bh = hb \rightarrow b^{-1}bh = h =  b^{-1}hb \rightarrow hb^{-1} = b^{-1}hbb^{-1} = b^{-1}h) \\
+                           = hab^{-1} (\because a \in C_G(H) \rightarrow ah = ha)$ \\
+Therefore, $ab^{-1} \in C_G(H)$.\\ 
+It means $C_G(H)$ is a subgroup of $G$. 
+\item[b.]
+$H = <F> = \{e,F\}.$\\
+So, we only need to find elements $X$ in $\mathcal D_4$ which satisfy $XF = FX$.\\
+($ \because \quad\forall x, xe = x = ex$ is trivial, we do not need to check.)\\
+Trivially, $eF = F = Fe$. So $e \in C_G(<F>)$.\\
+It just have 7 more elements. Let's check all cases.\\
+$(R)F = F(R^{3}) \neq F(R)$. So $R \notin C_G(<F>)$.\\
+$(R^{2})F = F(R^{2})$. So $R^{2} \in C_G(<F>)$.\\
+$(R^{3})F = F(R) \neq F(R^{3})$. So $R^{3} \notin C_G(<F>)$.\\
+$(F)F = F^{2} = F(F)$. So $F \in C_G(<F>)$.\\
+$(FR)F = FFR^{3} = R^{3} \neq F(FR) = R$. So $(FR) \notin C_G(<F>)$.\\
+$(FR^{2})F = R^{2}FF = R^{2} = F(FR^{2})$. So $(FR^{2}) \in C_G(<F>)$.\\
+$(FR^{3})F = RFF = R \neq F(FR^{3}) = R^{3}$. So $(FR^{3} \notin C_G(<F>)$.\\
+Hence, $C_G(<F>) = C_G(<F>) = \{e, R^{2}, F,  FR^{2}\}$.
+
+\end{enumerate}
+%   insert your solution to problem 2 below this line 
+\newpage 
+\fbox{\parbox{\textwidth}{\vskip.2em 
+3. Suppose $\varphi : G_1 \to G_2$ is a non-trivial homomorphism of groups and that 
+$|G_1|=p$, a prime.  Show that $\varphi$ is injective.  
+\vskip.2em }}
+\vskip1em
+{\it Solution.}
+By the first Isomorphism theorem, $ker\varphi \vartriangleleft G_1$ and $G_1/ker\varphi \equiv \varphi(G_1)$.\\
+So $\frac{|G_1|}{|ker\varphi|} = |\varphi(G_1)|$.\\
+It means that $\frac{|G_1|}{|ker\varphi|}$ is an integer. Since $|G_1|$ is a prime $p$, $|ker\varphi|$ should be either 1 or $p$. \\ 
+But $\varphi$ is non-trivial homomorphism, $|ker\varphi|$ should be 1.
+So, $ker\varphi = \{e\}.$ It means that $\varphi$ is injective.  
+%   insert your solution to problem 3 below this line 
+\end{document}
